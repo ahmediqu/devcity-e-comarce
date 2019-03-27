@@ -28,6 +28,7 @@ mix.sass('resources/sass/app.scss', 'public/css')
     'resources/assets/css/past-color.css',
     'resources/assets/css/purple-color.css',
     'resources/assets/css/responsive.css',
+    'resources/assets/css/style.css',
 ], 'public/css/all.css')
 	.scripts([
     'resources/assets/js/ajax-mail.js',
