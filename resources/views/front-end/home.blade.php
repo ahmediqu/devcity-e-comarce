@@ -275,8 +275,22 @@
                         <div class="pro-content">
                             <div class="pro-info">
                                 <h4><a href="product.html">{{$product->title}}</a></h4>
-                                <p><span class="price">{{$product->price}}</span><del class="prev-price">$105.50</del></p>
-                                <div class="label-product l_sale"><button class="btn btn-default btn-sm">Add Cart</button></div>
+                                <p>
+                                    @if($product->sale_price!=null || $product->sale_price>0)
+                                    <span class="price">{{$product->price}}</span>
+
+                                    <del class="prev-price">${{$product->sale_price}}</del>
+                                    @else
+                                    <span class="price">{{$product->price}}</span>
+                                    @endif
+                                </p>
+                                <form action="{{route('cart.add')}}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                                <div class="label-product l_sale">
+
+                                    <button type="submit" class="btn btn-default btn-sm">Add Cart</button></div>
+                                </form>
                             </div>
                             <!-- <div class="pro-actions">
                                 <div class="actions-primary">

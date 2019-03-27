@@ -98,9 +98,13 @@
                                         <input class="quantity mr-15" type="number" min="1" value="1">
                                     </form>
                                     <div class="pro-actions">
+                                        <form action="{{route('cart.add')}}" method="post">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{$product->id}}">
                                         <div class="actions-primary">
-                                            <a href="cart.html" title="" data-original-title="Add to Cart"> + Add To Cart</a>
+                                            <button type="submit" title="" class="btn btn-info" data-original-title="Add to Cart"> + Add To Cart</button>
                                         </div>
+                                        </form>
                                         <div class="actions-secondary">
                                             <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
                                             <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>

@@ -8,6 +8,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'category_id' => Category::all()->random()->id,
         'title' => $faker->text(100),
         'description' => $faker->realText(),
-        'price' => random_int(100,1000)
+        'price' => random_int(100,1000),
+        'sale_price' => random_int(10,1000)
     ];
 });
